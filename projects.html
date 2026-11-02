@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Drew Thompson</title>
+  <meta name="description" content="Bioinformatics projects by Drew Thompson: RNA sequencing pipelines, environmental DNA metabarcoding, cancer genome pipelines, and open-source software.">
+  <link rel="canonical" href="https://www.drewthompson.ca/projects.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="name" href="/">Drew Thompson</a>
+      <nav>
+        <a href="/">About</a>
+        <a href="/projects.html" aria-current="page">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Projects</h1>
+    <p class="tagline">Selected bioinformatics and software work.</p>
+
+    <article class="project">
+      <h3>Bulk RNA sequencing pipeline for wood frog skin transcriptomics</h3>
+      <p class="meta">MSc thesis, Katzenback Lab, University of Waterloo &middot; 2021 – 2024 &middot; <a href="https://github.com/dthom7/MScThesisCode">github.com/dthom7/MScThesisCode</a></p>
+      <p>For my MSc, I built the analysis pipeline used to study how the dorsal skin of the North American wood frog (<em>Rana sylvatica</em>) changes through development and in response to chronic exposure to a microplastics mixture. The pipeline runs on the Slurm-managed clusters of the Digital Research Alliance of Canada and covers quality control, alignment, transcriptome assembly, functional annotation, differential expression analysis, and gene set enrichment analysis.</p>
+      <ul>
+        <li>Processed over 3 billion raw reads from 34 samples, and assembled 96,645 transcripts across 45,926 genes.</li>
+        <li>Adapted the pipeline from a planned de novo assembly to a reference-guided approach when the wood frog reference genome was released partway through the analysis.</li>
+        <li>Wrote the pipeline as approximately 50 Slurm-driven Bash scripts and 34 R analysis scripts, using strict-mode Bash, array jobs, md5 integrity checks at every stage, and pinned tool versions so each run can be reproduced.</li>
+      </ul>
+      <p>The findings are being prepared for publication, so I'll add a summary here once the papers are out.</p>
+      <ul class="tags">
+        <li>R</li><li>Bash</li><li>Slurm</li><li>HISAT2</li><li>StringTie</li><li>Trinotate</li><li>DESeq2</li><li>clusterProfiler</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <h3>Environmental DNA metabarcoding and amphibian skin microbiome analysis</h3>
+      <p class="meta">Katzenback Lab, University of Waterloo &middot; 2022 – 2025</p>
+      <p>As a Research Technician, I performed full stack analysis of custom environmental DNA metabarcoding data, from raw sequencing reads through to results, for collaborative projects surveying amphibian communities. During my MSc, I also analyzed 16S rRNA gene amplicon sequencing data from larval wood frog skin swabs to characterize the skin microbiome, including testing a blocking primer to reduce host amplification.</p>
+      <p>This work is ongoing or in preparation for publication, so details will follow.</p>
+      <ul class="tags">
+        <li>cutadapt</li><li>DADA2</li><li>QIIME 2</li><li>phyloseq</li><li>R</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <h3>Clustal Omega for Apple Silicon</h3>
+      <p class="meta">Personal project &middot; <a href="https://github.com/dthom7/clustal-omega-apple-silicon">github.com/dthom7/clustal-omega-apple-silicon</a></p>
+      <p>I ported the Clustal Omega multiple sequence alignment tool to Apple Silicon. Along the way, I tracked down and fixed a concurrency bug in the OpenMP ktuple pairwise-distance routine that appeared when the thread count was a multiple of 4.</p>
+      <ul class="tags">
+        <li>C</li><li>OpenMP</li><li>conda-forge</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <h3>Cancer genome analysis pipelines in WDL and Cromwell</h3>
+      <p class="meta">Shlien Lab, The Hospital for Sick Children &middot; 2018 – 2019</p>
+      <p>During my co-op term, I researched ways to make the Shlien Research Group's cancer genome analysis pipelines easier to maintain, port, and use, and rewrote them in WDL and Cromwell with documentation for running and extending them. I returned as a Technologist to maintain the pipelines, add new features, and work with a third-party company on running the analyses in the cloud. Somatic variant calling for a 70-genome leiomyosarcoma cohort was run through these pipelines, contributing to Anderson et al. (2021) in <em>Nature Communications</em>.</p>
+      <ul class="tags">
+        <li>WDL</li><li>Cromwell</li><li>HPC</li><li>Cloud</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <h3>ActiveDriverWGS (original version)</h3>
+      <p class="meta">Reimand Lab, Ontario Institute for Cancer Research &middot; 2017</p>
+      <p>I co-developed the original ActiveDriverWGS R package for discovering cancer driver mutations in non-coding DNA from whole genomes, packaging the Reimand Research Group's R scripts into a conventional R package. The software is credited in Zhu et al. (2020) in <em>Molecular Cell</em>. The lab has since re-implemented the package.</p>
+      <ul class="tags">
+        <li>R</li><li>R packages</li><li>Cancer genomics</li>
+      </ul>
+    </article>
+
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Programming</dt>
+      <dd>R, Bash, Python, C, WDL, SQL, Swift, and Objective-C.</dd>
+      <dt>Bioinformatics</dt>
+      <dd>Bulk RNA sequencing analysis, transcriptome assembly, functional annotation, differential expression analysis, gene set enrichment analysis, 16S rRNA gene amplicon sequencing, environmental DNA metabarcoding, microbiome analysis, cancer variant identification, cancer driver mutation discovery, repeat annotation, and gene prediction.</dd>
+      <dt>Computing</dt>
+      <dd>High-performance computing clusters, including Slurm, Lmod environment modules, conda, Python virtual environments, Cromwell, Git, and Linux.</dd>
+      <dt>Laboratory and field</dt>
+      <dd>Cell culture, aseptic technique, DNA and RNA isolation, PCR, gel electrophoresis, DNA barcoding, Sanger sequencing, environmental DNA and skin microbiome sample collection, and amphibian population surveys.</dd>
+    </dl>
+  </main>
+
+  <footer>
+    <div class="wrap">Drew Thompson &middot; <a href="https://www.linkedin.com/in/drew-thompson-1470a3294/">LinkedIn</a> &middot; <a href="https://github.com/dthom7">GitHub</a></div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,131 @@
+:root {
+  --bg: #fbfbf9;
+  --fg: #1f2421;
+  --muted: #5d6661;
+  --rule: #dfe3df;
+  --accent: #2f6f4f;
+  --card: #ffffff;
+  --max: 46rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141816;
+    --fg: #e4e8e5;
+    --muted: #9aa49e;
+    --rule: #2b322e;
+    --accent: #7cc39c;
+    --card: #1a1f1c;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 17px; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+header.site {
+  border-bottom: 1px solid var(--rule);
+  padding: 1rem 0;
+}
+
+header.site .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+header.site .name {
+  font-weight: 600;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+nav a {
+  margin-left: 1.25rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+nav a:first-child { margin-left: 0; }
+nav a[aria-current="page"], nav a:hover { color: var(--fg); }
+
+main { padding: 2.5rem 0 3rem; }
+
+h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 0.25rem; }
+h2 {
+  font-size: 1.15rem;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+h3 { font-size: 1.05rem; margin: 0 0 0.25rem; }
+
+.tagline { color: var(--muted); margin: 0 0 1.5rem; font-size: 1.05rem; }
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  padding: 0;
+  margin: 1.25rem 0 0;
+  list-style: none;
+}
+
+.entry { margin-bottom: 1.25rem; }
+.entry .meta { color: var(--muted); font-size: 0.92rem; margin: 0 0 0.35rem; }
+.entry p { margin: 0.35rem 0; }
+
+ol.pubs { padding-left: 1.25rem; }
+ol.pubs li { margin-bottom: 0.75rem; }
+.pubs .status { color: var(--muted); font-size: 0.92rem; }
+
+.project {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.project .meta { color: var(--muted); font-size: 0.92rem; margin: 0 0 0.5rem; }
+.project p { margin: 0.5rem 0; }
+.project ul { margin: 0.5rem 0; padding-left: 1.25rem; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.75rem; padding: 0; list-style: none; }
+.tags li {
+  font-size: 0.8rem;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.05rem 0.6rem;
+}
+
+dl.skills { margin: 0; }
+dl.skills dt { font-weight: 600; margin-top: 0.75rem; }
+dl.skills dd { margin: 0.15rem 0 0; }
+
+footer {
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.88rem;
+  padding: 1.25rem 0 2rem;
+}
